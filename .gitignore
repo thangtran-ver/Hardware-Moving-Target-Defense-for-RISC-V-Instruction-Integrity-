@@ -1,0 +1,39 @@
+# Local archives, duplicate checkouts and research material
+/archive/
+/github/
+/docs/references/
+/docs/reports/
+
+# Simulator/build outputs
+/build/
+**/work/
+**/transcript
+**/modelsim.ini
+**/vsim.wlf
+*.wlf
+*.vcd
+*.fst
+*.vvp
+*.log
+*.jou
+*.elf
+*.o
+*.d
+*.qws
+*.qdf
+**/db/
+**/incremental_db/
+**/output_files/
+
+# Editor and Python temporary files
+__pycache__/
+*.py[cod]
+*.bak*
+*.tmp
+~$*
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Firmware .hex and verification .txt files are intentional test fixtures.

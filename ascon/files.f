@@ -1,0 +1,17 @@
+ascon_add_constant.v
+ascon_sbox.v
+ascon_xor_diffusion.v
+ascon_round.v
+ascon_p8.v
+ascon_p12.v
+ascon_key_nonce_reg.v
+ascon_initial_state.v
+ascon_post_init.v
+ascon_ad_buffer_padding.v
+ascon_ad_absorb.v
+ascon_final_pre.v
+ascon_state_mux.v
+ascon_state_reg.v
+ascon_tag_output.v
+ascon_controller.v
+ascon_top.v

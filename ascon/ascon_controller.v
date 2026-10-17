@@ -58,7 +58,7 @@ always @(posedge clk or negedge rst_n) begin
     end else begin
         state <= next_state;
 
-        if ((state == IDLE) && start) begin
+        if (((state == IDLE) || (state == DONE)) && start) begin
             ad_empty_q <= ad_empty;
         end
     end
@@ -215,7 +215,14 @@ always @(*) begin
         DONE: begin
             busy = 1'b0;
             done = 1'b1;
-            next_state = IDLE;
+
+            // Start trung chu ky done: bat dau lan moi ngay, khong ve IDLE.
+            if (start) begin
+                kn_we = 1'b1;
+                next_state = LOAD_INIT;
+            end else begin
+                next_state = IDLE;
+            end
         end
 
         default: begin

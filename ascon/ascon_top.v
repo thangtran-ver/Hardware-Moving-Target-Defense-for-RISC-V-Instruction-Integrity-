@@ -1,13 +1,4 @@
-// ascon_top.v -- Ascon-128a v1.2 (AD-only MAC: plaintext rong)
-// Top = ascon_controller (FSM) + datapath dung 1 thanh ghi state chung.
-//
-// Giao tiep:
-//   * start: xung 1 chu ky khi busy = 0; key_d/nonce_d/ad_empty duoc chot luc nay.
-//   * ad_empty = 1 neu khong co AD (bat buoc, KHONG gui beat 0 byte thay the).
-//   * AD theo valid/ready: ad_data canh trai (byte dau o [127:120]).
-//     Moi beat tru beat cuoi phai du 16 byte (ad_last = 0).
-//     Beat cuoi: 1..16 byte, hoac 0 byte lam terminator sau it nhat 1 beat day.
-//   * done = 1 trong 1 chu ky; tag_out giu gia tri den lan tinh tiep theo.
+
 module ascon_top (
     input  wire         clk,
     input  wire         rst_n,

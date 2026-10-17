@@ -1,0 +1,14 @@
+* text=auto
+*.v text eol=lf
+*.sv text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.f text eol=lf
+*.do text eol=lf
+*.hex text eol=lf
+*.txt text eol=lf
+*.bat text eol=crlf
+*.png binary
+*.pdf binary
+*.docx binary
+*.elf binary
