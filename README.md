@@ -95,19 +95,12 @@ và module USB-UART **CP2102** (chi tiết nối dây ở [`constraints`](design
 Các paper về instruction/code integrity và authenticated execution nằm trong `docs/pdf/`:
 CIFER, Cryptographic Instruction Chaining, SABLE, Morpheus, Morpheus II, Proteus và bài Ascon v1.2.
 
-## Tái lập kết quả
-
-Mỗi kết quả (tài nguyên, thời gian, kịch bản tấn công) cần ghi kèm: commit hash, phiên bản toolchain
-(`design/sw/toolchain/VERSION`), phiên bản Gowin và tham số ký.
 
 ## Phần mềm bên thứ ba
 
 | Thành phần | Nguồn | License |
 | --- | --- | --- |
 | PicoRV32 (`design/hw/rtl/picorv32.v`) | Claire Xenia Wolf, YosysHQ | ISC |
-| Ascon (`design/hw/rtl/ascon/`) | Cần ghi rõ nguồn | Cần cập nhật |
-| xPack RISC-V GCC | xPack Dev Tools | Theo từng thành phần của toolchain |
+| xPack RISC-V GCC | xPack Dev Tools | |
 
 ## License
-
-Chưa chọn. Cần quyết định license cho phần mã của dự án trước khi công khai.
