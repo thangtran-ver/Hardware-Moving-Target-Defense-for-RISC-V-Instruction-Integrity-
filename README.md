@@ -3,7 +3,7 @@
 Nghiên cứu **xác thực lệnh (instruction integrity)** cho lõi RISC-V trên FPGA, theo hướng Moving Target Defense.
 
 > **Trạng thái:** đã có **baseline static authenticated execution**.
-> Giao thức **lazy evolution** (prepare → publish → retire).
+> đang nghiên cứu triển khai giao thức **lazy evolution** (prepare → publish → retire).
 
 ## Ý tưởng
 
