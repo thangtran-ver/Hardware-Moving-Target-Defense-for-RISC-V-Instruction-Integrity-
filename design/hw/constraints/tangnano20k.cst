@@ -1,0 +1,25 @@
+//======================================================================
+//  tangnano20k.cst -- Physical Constraints cho tangnano20k_top
+//  Board  : Sipeed Tang Nano 20K  /  GW2AR-LV18QN88C8/I7
+//    4        XTAL 27 MHz             -> sys_clk
+//    88       nut S1 (MODE0_KEY1)     -> btn_rst  (reset, cuc tinh tu nhan)
+//    41       UART TX -> RXD cua module CP2102 (header, 3.3 V)
+//    42       UART RX <- TXD cua module CP2102 (header, 3.3 V)
+//             (muon dung lai USB-UART tren board: doi 41 -> 69, 42 -> 70)
+//  Chan 87/88 la chan MODE (dual-purpose): Project -> Configuration ->
+//  Dual-Purpose Pin -> tick "Use MODE as regular IO" neu P&R bao loi.
+//======================================================================
+IO_LOC  "sys_clk" 4;
+IO_PORT "sys_clk" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+
+IO_LOC  "btn_rst" 88;
+IO_PORT "btn_rst" IO_TYPE=LVCMOS33;
+
+// CP2102: RXD <- chan 41, GND <-> GND, KHONG noi 3V3/5V, jumper CP2102 o 3.3 V
+IO_LOC  "uart_tx" 41;
+IO_PORT "uart_tx" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+
+// CP2102: TXD -> chan 42 (cung bank 4 / 3.3 V voi chan 41)
+// (USB-UART tren board: doi 42 -> 70)
+IO_LOC  "uart_rx" 42;
+IO_PORT "uart_rx" IO_TYPE=LVCMOS33 PULL_MODE=UP;

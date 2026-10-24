@@ -1,0 +1,4 @@
+# Binary toolchain khong dua len repo (cai bang setup.ps1)
+xpack-*/
+*.zip
+*.sha
