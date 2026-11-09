@@ -130,7 +130,6 @@ Với mỗi vector, testbench làm theo thứ tự:
 3. Mỗi khối: đưa `ad_data`, `ad_nbytes`, `ad_last`, `ad_valid=1` và **giữ nguyên cho đến khi thấy `ad_ready=1`**, rồi hạ `ad_valid`. Khối chỉ được nhận khi `ad_valid && ad_ready` cùng bằng 1.
 4. Chờ `done`, lấy `tag_out` và so với tag trong KAT.
 
-Điểm cần nhớ: `ad_ready` chỉ lên ở trạng thái `WAIT_AD`, tức sau khi `start` đã chạy xong P12 khởi tạo. Vì vậy nên **phát `start` trước, rồi mới đưa AD**. `ad_valid` lên sớm thì chỉ phải chờ, không mất dữ liệu; nhưng không được hạ `ad_valid` trước khi `ad_ready` lên.
 
 Các trường hợp biên đã được phủ: AD rỗng, 1–15 byte, đúng 16 byte (cần khối padding riêng, trạng thái `PAD_ONLY`), 17–31 byte, đúng 32 byte.
 
@@ -154,7 +153,7 @@ GTKWave là ứng dụng đồ họa. Trên Windows 11 (và Windows 10 bản m�
 ./run_verilator.sh wave
 ```
 
-Tham số `wave` bật `--trace` và tạo `wave.vcd` (khoảng 2,5 MB) trong `design/sim/ascon_128a/ascon_kat`.
+Tham số `wave` bật `--trace` và tạo `wave.vcd`  trong `design/sim/ascon_128a/ascon_kat`.
 
 ### 6.3 Mở waveform và tự thêm tín hiệu
 
@@ -162,8 +161,7 @@ Tham số `wave` bật `--trace` và tạo `wave.vcd` (khoảng 2,5 MB) trong `d
 gtkwave -S view_wave.tcl wave.vcd
 ```
 
-`view_wave.tcl` tự thêm tín hiệu, đổi sang hex và zoom toàn bộ. Phải chạy lệnh này **trong terminal (khi dấu nhắc lệnh đang rảnh)**; không dán nội dung Tcl vào terminal hay vào GTKWave, vì Tcl chỉ chạy được khi nằm trong tệp.
-
+`view_wave.tcl` tự thêm tín hiệu, đổi sang hex và zoom toàn bộ. 
 Nếu GTKWave đã mở sẵn, vào menu **File → Read Tcl Script File…** và chọn `view_wave.tcl`.
 
 Zoom vào một đoạn thời gian (ví dụ hai vector đầu, 400–1300 ns):
@@ -186,7 +184,7 @@ set want {
 
 Bộ đầy đủ: `clk rst_n mode start ad_empty ad_valid ad_ready ad_last ad_nbytes ad_data key_d nonce_d busy done tag_out dut.u_ctrl.state`.
 
-### 6.5 Thêm tín hiệu bằng tay (không dùng script)
+### 6.5 Thêm tín hiệu thu cong (không dùng script)
 
 1. Ở khung **SST** (trên cùng bên trái) mở `TOP` → `tb_ascon_kat`. Khung **Signals** bên dưới liệt kê tín hiệu.
 2. **Bấm đúp** tín hiệu để thêm vào khung sóng; hoặc chọn nhiều tín hiệu (giữ `Ctrl`/`Shift`) rồi bấm **Append** (thêm xuống cuối), **Insert** (chèn trên tín hiệu đang chọn) hoặc **Replace**.
