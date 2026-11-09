@@ -1,0 +1,5 @@
+# giu dung kieu xuong dong khi clone tren Windows
+*.sh  text eol=lf
+*.tcl text eol=lf
+*.py  text eol=lf
+*.bat text eol=crlf
