@@ -1,0 +1,11 @@
+# file sinh ra khi chay test
+results/
+wave.vcd
+build.log
+run.log
+kat_vectors.txt
+work/
+transcript
+vsim.wlf
+modelsim.ini
+__pycache__/
